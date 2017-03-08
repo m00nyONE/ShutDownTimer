@@ -30,8 +30,6 @@ namespace ShutdownTimer
             this.TopMost = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
         }
-
-
     }
 }
 
