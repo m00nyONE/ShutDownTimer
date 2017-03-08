@@ -55,22 +55,22 @@ namespace ShutdownTimer
         {
             if (checkBox1.Checked == true)
             {
+                trackBarBrightness.Visible = true;
                 for (int i = 132;i <= 187; i+=3)
                 {
                     this.Size = new Size(388, i);
-                    Thread.Sleep(1);
-                    trackBarBrightness.Visible = true;
-               }
+                    Thread.Sleep(1);                   
+               }               
             }
 
             if (checkBox1.Checked == false)
             {
+                trackBarBrightness.Visible = false;
                 for (int i = 187; i >= 132; i-=3)
                 {
                     this.Size = new Size(388, i);
                     Thread.Sleep(1);
-                    trackBarBrightness.Visible = false;
-                }
+                }              
             }
         }
 
