@@ -23,8 +23,28 @@ namespace ShutdownTimer
             BrightnessWindow.Hide();
             BrightnessWindow.Opacity = 0.00;
         }
-
-        string flags = "1", time, oldtime, ModusText = "Herunterfahren ", Modus = "in: ";
+        
+        // 0 = eng , 1 = de , ...... more to come
+        int lang = 0;
+        
+        string[2][7] language;
+        
+        language[0][0] = "Shutdown ";
+        language[0][1] = "Reboot ";
+        language[0][2] = "Logout ";
+        language[0][3] = "in: ";
+        language[0][4] = "at: ";
+        language[0][5] = "brightness: ";
+        language[0][6] = "Timer stopped";
+        language[1][0] = "Herunterfahren" ;
+        language[1][1] = "Neustarten ";
+        language[1][2] = "Logout ";
+        language[1][3] = "in: ";
+        language[1][4] = "um: ";
+        language[1][5] = "Helligkeit: ";
+        language[1][6] = "Timer gestoppt";
+        
+        string flags = "1", time, oldtime, ModusText = language[lang][0] + language[lang][3];
         int ModusInt = 0, SetTime = 0, CurrentTime = 0;
         string h= "h ", min = "min ", s= "s ";
         string stundenS = "", minutenS = "", sekundenS = "";
@@ -45,7 +65,7 @@ namespace ShutdownTimer
             {
                 BrightnessWindow.Show();
                 BrightnessTotalLabel.Show();
-                BrightnessTotalLabel.Text = "Helligkeit: " + BrightnessTotal + "%";
+                BrightnessTotalLabel.Text = language[lang][5] + BrightnessTotal + "%";
             }
         }
 
@@ -98,7 +118,7 @@ namespace ShutdownTimer
         private void Abbrechen_Click(object sender, EventArgs e)
         {
             timer1.Stop();
-            this.Text = "Timer gestoppt";
+            this.Text = language[lang][6];
         }
 
         private void inum_SelectedIndexChanged(object sender, EventArgs e)    
@@ -153,10 +173,10 @@ namespace ShutdownTimer
         {
             switch (mode.SelectedIndex)
             {
-                case 0: { flags = "1"; ModusText = "Herunterfahren "; } break;
-                case 1: { flags = "2"; ModusText = "Neustart "; } break;
-                case 2: { flags = "0"; ModusText = "Sperren "; } break;
-                default: { flags = "1"; ModusText = "Herunterfahren "; } break;
+                case 0: { flags = "1"; ModusText = language[lang][0]; } break;
+                case 1: { flags = "2"; ModusText = language[lang][1]; } break;
+                case 2: { flags = "0"; ModusText = language[lang][2]; } break;
+                default: { flags = "1"; ModusText = language[lang][0]; } break;
             }
         }
 
