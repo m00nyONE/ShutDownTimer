@@ -44,7 +44,7 @@ namespace ShutdownTimer
         language[1][5] = "Helligkeit: ";
         language[1][6] = "Timer gestoppt";
         
-        string flags = "1", time, oldtime, ModusText = language[lang][0] + language[lang][3];
+        string flags = "1", time, oldtime, ModusText = language[lang][0], Modus = language[lang][3];
         int ModusInt = 0, SetTime = 0, CurrentTime = 0;
         string h= "h ", min = "min ", s= "s ";
         string stundenS = "", minutenS = "", sekundenS = "";
