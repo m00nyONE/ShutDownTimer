@@ -5,3 +5,8 @@ Just a simple Shutdowntimer if you want to let your PC running for specific task
 
 v 1.2 : 
 - Added Language Support!!
+
+
+
+
+this was my very first "usefull" programm
