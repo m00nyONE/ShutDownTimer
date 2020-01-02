@@ -9,4 +9,5 @@ v 1.2 :
 
 
 
-this was my very first "usefull" programm
+this was my very first "usefull" programm. 
+It is definitely not the best out there and is also poorly written.
